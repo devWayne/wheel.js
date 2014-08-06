@@ -6,22 +6,3 @@ border:1px solid black;
 -webkit-border-radius:250px; 
 border-radius:250px; 
 } 
-.wheel li:first-child {
-  transform: rotate(-10deg) skew(50deg);
-}
-
-.wheel li:nth-child(2) {
-  transform: rotate(30deg) skew(50deg);
-}
-
-.wheel li:nth-child(3) {
-  transform: rotate(70deg) skew(50deg)
-}
-
-.wheel li:nth-child(4) {
-  transform: rotate(110deg) skew(50deg);
-}
-
-.wheel li:nth-child(5) {
-  transform: rotate(150deg) skew(50deg);
-}

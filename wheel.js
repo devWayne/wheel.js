@@ -10,9 +10,6 @@
 		})
 	}
 
-	$.fn.wheel.defaults = {
-
-	}
 
 	function centershow(divName) {
 		var container = $(divName).parent();
@@ -29,14 +26,18 @@
 	}
 
 
-	$.rotate=function(final_deg) {
-		var deg = 0,
-			acc = 1,
-			acc_flag = true,
-			deg=deg+final_deg;
+	$.fn.rotate=function(final_deg) {
+		var	acc = 1,
+			acc_flag = true;
+			if(final_deg<180){
+				final_deg=final_deg+360;
+			}
+			var deg=final_deg;
+			//console.log(this);
+			var _this=$(this);
 			timefunc = setInterval(function() {
 
-				if (deg < final_deg * 100 && acc_flag) {
+				if (deg < final_deg * 50 && acc_flag) {
 					acc++;
 					deg = deg + acc;
 				} else {
@@ -48,8 +49,8 @@
 						clearInterval(timefunc);
 					}
 				}
-				$('.lotteryBtn').css('-webkit-transform', 'rotate(' + deg + 'deg)')
-			}, 50);
+				_this.css('-webkit-transform', 'rotate(' + deg + 'deg)')
+			}, 20);
 	}
 
 	
