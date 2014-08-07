@@ -17,16 +17,17 @@
 				<div class="wheel" style="position:relative">
 					<img src="rotate-static.png" class="lotteryBtn">
 				</div>
-				<p><button id="demo" class="btn">点击查看效果</button></p>
 			</blockquote>
 		</div>
 		<div>
 
 			<blockquote>
 				<h2>使用说明</h2>
+//转盘居中定位
 $('.wheel').wheel();
 $('.lotteryBtn').click(function() {
-$.rotate(120);
+//传入终止时的角度
+$(this).rotate(30);
 });
         <pre>
 		</pre>

@@ -26,32 +26,31 @@
 	}
 
 
-	$.fn.rotate=function(final_deg) {
-		var	acc = 1,
+	$.fn.rotate = function(final_deg) {
+		var acc = 1,
 			acc_flag = true;
-			if(final_deg<180){
-				final_deg=final_deg+360;
-			}
-			var deg=final_deg;
-			//console.log(this);
-			var _this=$(this);
-			timefunc = setInterval(function() {
+		if (final_deg < 180) {
+			final_deg = final_deg + 360;
+		}
+		var deg = final_deg,
+			_this = $(this);
+		timefunc = setInterval(function() {
 
-				if (deg < final_deg * 50 && acc_flag) {
-					acc++;
-					deg = deg + acc;
-				} else {
-					acc_flag = false;
-					deg = deg - acc;
-					acc--;
-					
-					if (acc == 1 && deg == final_deg && !acc_flag) {
-						clearInterval(timefunc);
-					}
+			if (deg < final_deg * 50 && acc_flag) {
+				acc++;
+				deg = deg + acc;
+			} else {
+				acc_flag = false;
+				deg = deg - acc;
+				acc--;
+
+				if (acc == 1 && deg == final_deg && !acc_flag) {
+					clearInterval(timefunc);
 				}
-				_this.css('-webkit-transform', 'rotate(' + deg + 'deg)')
-			}, 20);
+			}
+			_this.css('-webkit-transform', 'rotate(' + deg + 'deg)')
+		}, 20);
 	}
 
-	
+
 })(jQuery)
