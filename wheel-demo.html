@@ -3,33 +3,34 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="wheel.css">
 		<title>wheelJs</title>
-		<style>
-		.btn{
-			height:30px;
-		}
-		</style>
 	</head>
 	<body>
 		<div>
 			<blockquote>
-				<div class="wheel" style="position:relative">
-					<img src="rotate-static.png" class="lotteryBtn">
-				</div>
+				<div>
+				<img class="wheel" src="wheel.png" >	
+				<img src="rotate-static.png" class="lotteryBtn">
+			</div>
 			</blockquote>
 		</div>
 		<div>
 
 			<blockquote>
 				<h2>使用说明</h2>
-//转盘居中定位
-$('.wheel').wheel();
+	<pre>
+	data = {
+		firstclass:{angular:155,word:"恭喜您获得一等奖"},
+		secondclass:{angular:245,word:"恭喜您获得二等奖"},
+		thirdclass:{angular:25,word:"恭喜您获得三等奖"},
+		noprize:{angular:60,word:"请再接再厉"}
+		}
+		$('.wheel').wheel();
 $('.lotteryBtn').click(function() {
-//传入终止时的角度
-$(this).rotate(30);
-});
-        <pre>
+		$(this).rotate(data.firstclass.angular,function(){
+			alert(data.firstclass.word);
+			});
+		});        
 		</pre>
 			</blockquote>
 		</div>
@@ -37,9 +38,17 @@ $(this).rotate(30);
 		<script src="wheel.js"></script>
 		<script>
 		jQuery(document).ready(function($) {
+			data = {
+				firstclass:{angular:155,word:"恭喜您获得一等奖"},
+				secondclass:{angular:245,word:"恭喜您获得二等奖"},
+				thirdclass:{angular:25,word:"恭喜您获得三等奖"},
+				noprize:{angular:60,word:"请再接再厉"}
+			}
 			$('.wheel').wheel();
 			$('.lotteryBtn').click(function() {
-				$(this).rotate(30);
+				$(this).rotate(data.firstclass.angular,function(){
+					alert(data.firstclass.word);
+				});
 			});	
 		});
 		</script>
