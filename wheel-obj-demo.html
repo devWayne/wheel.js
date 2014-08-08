@@ -19,23 +19,24 @@
 			<blockquote>
 				<h2>使用说明</h2>
 	<pre>
-	data = {
-		firstclass:{angular:155,word:"恭喜您获得一等奖"},
-		secondclass:{angular:245,word:"恭喜您获得二等奖"},
-		thirdclass:{angular:25,word:"恭喜您获得三等奖"},
-		noprize:{angular:60,word:"请再接再厉"}
-		}
-		$('.outerWheel').wheel();
-$('.innerWheel').click(function() {
-		$(this).rotate(data.firstclass.angular,function(){
-			alert(data.firstclass.word);
-			});
-		});        
+data = {
+				firstclass:{angular:155,word:"恭喜您获得一等奖"},
+				secondclass:{angular:245,word:"恭喜您获得二等奖"},
+				thirdclass:{angular:25,word:"恭喜您获得三等奖"},
+				noprize:{angular:60,word:"请再接再厉"}
+			}		
+			var wheelDemo=new Wheel();	
+			wheelDemo.centershow();
+			$('.innerWheel').click(function() {			
+				wheelDemo.rotate(data.firstclass.angular,function(){
+				alert(data.firstclass.word);
+				})
+			});	  
 		</pre>
 			</blockquote>
 		</div>
 		<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-		<script src="wheel.js"></script>
+		<script src="wheel-obj.js"></script>
 		<script>
 		jQuery(document).ready(function($) {
 			data = {
@@ -43,12 +44,13 @@ $('.innerWheel').click(function() {
 				secondclass:{angular:245,word:"恭喜您获得二等奖"},
 				thirdclass:{angular:25,word:"恭喜您获得三等奖"},
 				noprize:{angular:60,word:"请再接再厉"}
-			}
-			$('.outerWheel').wheel();
-			$('.innerWheel').click(function() {
-				$(this).rotate(data.firstclass.angular,function(){
-					alert(data.firstclass.word);
-				});
+			}		
+			var wheelDemo=new Wheel();	
+			wheelDemo.centershow();
+			$('.innerWheel').click(function() {			
+				wheelDemo.rotate(data.firstclass.angular,function(){
+				alert(data.firstclass.word);
+				})
 			});	
 		});
 		</script>
