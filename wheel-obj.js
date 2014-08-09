@@ -28,7 +28,7 @@
 		}).show();
 	}
  	
- 	proto.rotate=function(final_deg,callback){
+ 	proto.rotate=function(final_deg,callback){	
  		var acc = 1,
 				acc_flag = true;
 			if (final_deg < 180) {
